@@ -1,10 +1,17 @@
 <h1>{{title}}</h1>
-
-<div class="card" style="width: 18rem;">
-    <img src="https://static.bershka.net/4/photos2/2023/V/0/2/p/2295/443/800/2295443800_2_4_4.jpg?t=1667230794381" class="card-img-top" alt="...">
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
+<div class="row">
+  <div *ngFor="let product of list" class="col-md-3">
+    <div class="card" style="width: 18rem;">
+      <img src="{{product.picture}}" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">{{product.name}}</h5>
+        <p class="card-text">
+         price: {{product.price}} -- quantity: {{product.quantity}}
+        </p>
+        <button class="btn btn-sm btn-danger" (click)="incrementLike(product)">
+          like {{product.nbrLike}}
+        </button>
+      </div>
     </div>
   </div>
+</div>

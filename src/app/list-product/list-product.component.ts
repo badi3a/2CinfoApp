@@ -28,6 +28,12 @@ export class ListProductComponent implements OnInit {
           nbrLike: 20}
     ]
   }
+  incrementLike(product:Product){
+    let i = this.list.indexOf(product)
+    if(i!=-1){
+      this.list[i].nbrLike++
+    }
+  }
 
 
 }
