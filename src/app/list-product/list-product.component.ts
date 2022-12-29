@@ -13,7 +13,8 @@ export class ListProductComponent implements OnInit {
   }
   ngOnInit(): void {
     this.title = 'My Shop App';
-    this.list=[
+    //cnx BackEnd read list of product
+    this.list= [
         {id: 12,
         name: 'T-shirt 1',
         price: 150,
@@ -28,12 +29,21 @@ export class ListProductComponent implements OnInit {
           nbrLike: 20}
     ]
   }
+
   incrementLike(product:Product){
-    let i = this.list.indexOf(product)
+   //cnx BackEnd
+    let i=this.list.indexOf(product)
     if(i!=-1){
       this.list[i].nbrLike++
     }
   }
+  buyProduct(product:Product){
+    //cnx BackEnd
+     let i=this.list.indexOf(product)
+     if(i!=-1){
+       this.list[i].quantity--
+     }
+   }
 
 
 }
