@@ -15,7 +15,8 @@ export class FormProductComponent implements OnInit {
   }
 
   saveProduct(){
-
+    this.product.nbrLike=0;
+   console.log(this.product)
   }
 
 }
