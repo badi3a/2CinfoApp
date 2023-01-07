@@ -1,8 +1,9 @@
+<h1>{{productName}}</h1>
 <form>
 <div class="form-group col-md-4">
   <label>Product Name:*</label>
-  <input type="text" name="pName"
-  class="form-control">
+  <input type="text" name="pName" [(ngModel)]="productName"
+   class="form-control">
 </div>
 <div class="form-group col-md-4">
   <label>Product Price:*</label>
@@ -20,7 +21,8 @@
   class="form-control">
 </div>
 <br>
-<button class="btn btn-success">
+<button class="btn btn-success"
+(click)="saveProduct()">
  save
 </button>
 &nbsp;
