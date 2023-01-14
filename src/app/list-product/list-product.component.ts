@@ -15,8 +15,9 @@ export class ListProductComponent implements OnInit {
   }
   ngOnInit(): void {
     this.title = 'My Shop App';
-    //cnx BackEnd read list of product
-    this.list= this.productService.list;
+    this.productService.getAll().subscribe(
+      (response:Product[])=>{this.list=response}
+    )
 
   }
 
