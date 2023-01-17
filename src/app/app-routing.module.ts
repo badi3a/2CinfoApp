@@ -12,6 +12,7 @@ const routes: Routes = [
   {path:"list", component: ListProductComponent},
   {path:"contact", component: ContactComponent},
   {path:"new", component: FormProductComponent},
+  {path:"update/:id", component: FormProductComponent},
   {path:"**",component: NotFoundComponent}
 ];
 

@@ -9,10 +9,18 @@
         <p class="card-text">
          price: {{product.price}} -- quantity: {{product.quantity}}
         </p>
-        <button class="btn btn-sm btn-danger"
+        <button class="btn btn-sm btn-warning"
         (click)="incrementLike(product)">
           like {{product.nbrLike}}
         </button>
+
+        <button class="btn btn-sm btn-danger"
+        (click)="deleteProduct(product)">
+          Delete
+        </button>
+        <a [routerLink]="['/update',product.id]" class="btn btn-sm btn-primary">
+          update
+        </a>
         <button class="btn btn-sm btn-warning btnBuy"
         (click)="buyProduct(product)" [disabled]="product.quantity==0">
           buy

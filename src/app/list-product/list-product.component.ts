@@ -18,7 +18,6 @@ export class ListProductComponent implements OnInit {
     this.productService.getAll().subscribe(
       (response:Product[])=>{this.list=response}
     )
-
   }
 
   incrementLike(product:Product){
@@ -34,6 +33,24 @@ export class ListProductComponent implements OnInit {
      if(i!=-1){
        this.list[i].quantity--
      }
+   }
+
+   deleteProduct(product:Product){
+    let i= this.list.indexOf(product)
+    this.productService.delete(product.id).subscribe(
+      ()=>{this.list.splice(i,1)
+      //other 2
+      //this.productService.getAll().subscribe(
+      // (response:Product[])=>{this.list=response}
+      // )
+      //other 3
+      //this.route.navigate(['/list'])
+
+    }
+    )
+
+
+
    }
 
 
